@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="IdActividad:" for="idActividad" />
+                    <h:inputText id="idActividad" value="#{actividadManageBean.actividad.idActividad}" title="IdActividad" required="true" requiredMessage="The IdActividad field is required."/>
+                    <h:outputLabel value="NombreActividad:" for="nombreActividad" />
+                    <h:inputText id="nombreActividad" value="#{actividadManageBean.actividad.nombreActividad}" title="NombreActividad" required="true" requiredMessage="The NombreActividad field is required."/>
+                    <h:outputLabel value="DescripcionActividad:" for="descripcionActividad" />
+                    <h:inputTextarea rows="4" cols="30" id="descripcionActividad" value="#{actividadManageBean.actividad.descripcionActividad}" title="DescripcionActividad" required="true" requiredMessage="The DescripcionActividad field is required."/>
+                    <h:outputLabel value="HoraInicio:" for="horaInicio" />
+                    <h:inputText id="horaInicio" value="#{actividadManageBean.actividad.horaInicio}" title="HoraInicio" required="true" requiredMessage="The HoraInicio field is required.">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="HoraFin:" for="horaFin" />
+                    <h:inputText id="horaFin" value="#{actividadManageBean.actividad.horaFin}" title="HoraFin" required="true" requiredMessage="The HoraFin field is required.">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="FkIdUsuario:" for="fkIdUsuario" />
+                    <h:inputText id="fkIdUsuario" value="#{actividadManageBean.actividad.fkIdUsuario}" title="FkIdUsuario" required="true" requiredMessage="The FkIdUsuario field is required."/>
+                </h:panelGrid>
+                <h:commandButton value="Registrar" action="#{actividadManageBean.registrarActividad()}" />
+            </h:form>
+        </f:view>
+
+    </body>
+</html>

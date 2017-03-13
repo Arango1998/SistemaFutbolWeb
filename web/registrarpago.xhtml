@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="IdPago:" for="idPago" />
+                    <h:inputText id="idPago" value="#{pagoManageBean.pago.idPago}" title="IdPago" required="true" requiredMessage="The IdPago field is required."/>
+                    <h:outputLabel value="FechaPago:" for="fechaPago" />
+                    <h:inputText id="fechaPago" value="#{pagoManageBean.pago.fechaPago}" title="FechaPago" required="true" requiredMessage="The FechaPago field is required.">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="Monto:" for="monto" />
+                    <h:inputText id="monto" value="#{pagoManageBean.pago.monto}" title="Monto" required="true" requiredMessage="The Monto field is required."/>
+                    <h:outputLabel value="Estado:" for="estado" />
+                    <h:inputText id="estado" value="#{pagoManageBean.pago.estado}" title="Estado" required="true" requiredMessage="The Estado field is required."/>
+                    <h:outputLabel value="FkIdJugador:" for="fkIdJugador" />
+                    <h:selectOneMenu id="fkIdJugador" value="#{pagoManageBean.pago.fkIdJugador}" title="FkIdJugador" required="true" requiredMessage="The FkIdJugador field is required.">
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{fixme}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandButton value="Registrar" action="#{pagoManageBean.registrarPago()}" />
+            </h:form>
+        </f:view>
+
+        
+    </body>
+</html>
